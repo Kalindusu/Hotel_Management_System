@@ -1,7 +1,11 @@
 package com.ceylontours.CeylonToursHotel.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -12,10 +16,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private String name;
+
+    @NotBlank(message = "Email is required")
+    @Column(unique=true)
     private String email;
+    @NotBlank(message = "Name is required")
+    private String name;
+    @NotBlank(message = "Phone Number is required")
+
     private String phoneNumber;
     private  String password;
+
+    private List<Booking> bookings= new ArrayList<>();
 
 
 
