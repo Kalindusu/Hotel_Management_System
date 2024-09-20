@@ -2,6 +2,7 @@ package com.ceylontours.CeylonToursHotel.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NonNull;
@@ -22,7 +23,10 @@ public class Booking {
     @Future(message="check out date must be in the future")
     private LocalDate checkOutData;
 
+
+@Min(value = 1,message="Number of adult must not be less that 1")
     private int numOfAdult;
+    @Min(value = 0,message="Number of children must not be less that 0")
     private int numOfChildren;
     private int totalNumOfGuest;
     private String bookingConfiremationCode;
@@ -33,9 +37,30 @@ public class Booking {
     @JoinColumn(name="room_id")
     private Room room;
 
+    public void calculateTotalNumberofGuests(){
+        this.totalNumOfGuest=this.numOfAdult+this.numOfChildren;
+    }
 
+    public void setNumOfAdult(int numOfAdult) {
+        this.numOfAdult = numOfAdult;
+        calculateTotalNumberofGuests();
+    }
 
+    public void setNumOfChildren(int numOfChildren) {
+        this.numOfChildren = numOfChildren;
+        calculateTotalNumberofGuests();
+    }
 
-
-
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", checkInData=" + checkInData +
+                ", checkOutData=" + checkOutData +
+                ", numOfAdult=" + numOfAdult +
+                ", numOfChildren=" + numOfChildren +
+                ", totalNumOfGuest=" + totalNumOfGuest +
+                ", bookingConfiremationCode='" + bookingConfiremationCode + '\'' +
+                '}';
+    }
 }
