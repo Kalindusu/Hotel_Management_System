@@ -29,12 +29,12 @@ public class User implements UserDetails {
     @NotBlank(message = "Phone Number is required")
 
     private String phoneNumber;
+    @NotBlank(message = "Password is required")
     private  String password;
 
-    private List<Booking> bookings= new ArrayList<>();
     private String role;
-
-
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Booking> bookings= new ArrayList<>();
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role));
