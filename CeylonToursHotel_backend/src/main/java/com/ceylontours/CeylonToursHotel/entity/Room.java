@@ -3,6 +3,7 @@ package com.ceylontours.CeylonToursHotel.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class Room {
 
 
     private String roomType;
-    private String roomPrice;
+    private BigDecimal roomPrice;
     private String roomPhotoUrl;
     private String roomDescription;
     private List<Booking> booking =new ArrayList<>();
