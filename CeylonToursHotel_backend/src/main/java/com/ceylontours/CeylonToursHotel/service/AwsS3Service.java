@@ -18,13 +18,12 @@ import java.io.InputStream;
 @Service
 public class AwsS3Service {
 
-    //    private final String bucketName = "phegon-hotel-images";
-    private final String bucketName = "phegon-hotel-mongo";
+    private final String bucketName = "ceylontours-hotel-images";
 
-    @Value("${aws.s3.access.key}")
+    @Value("${aws.s3.access-key}")
     private String awsS3AccessKey;
 
-    @Value("${aws.s3.secret.key}")
+    @Value("${aws.s3.secrete-key}")
     private String awsS3SecretKey;
 
     public String saveImageToS3(MultipartFile photo) {
@@ -37,7 +36,7 @@ public class AwsS3Service {
             BasicAWSCredentials awsCredentials = new BasicAWSCredentials(awsS3AccessKey, awsS3SecretKey);
             AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
-                    .withRegion(Regions.US_EAST_2)
+                    .withRegion(Regions.US_EAST_1)
                     .build();
 
             InputStream inputStream = photo.getInputStream();
