@@ -14,10 +14,11 @@ import java.util.List;
 public class RoomDTO {
 
     private Long id;
-    private BigDecimal roomType;
-    private String roomPrice;
+    private String roomType;
+    private BigDecimal roomPrice;
     private String roomPhotoUrl;
     private String roomDescription;
-    private List<BookingDTO> booking ;
+    private List<BookingDTO> bookings ;
+
 
 }
