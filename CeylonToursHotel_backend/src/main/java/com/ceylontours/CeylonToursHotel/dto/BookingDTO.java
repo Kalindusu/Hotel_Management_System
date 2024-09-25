@@ -12,12 +12,13 @@ import java.time.LocalDate;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BookingDTO {
     private Long id;
-    private LocalDate checkInData;
-    private LocalDate checkOutData;
-    private int numOfAdult;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
+    private int numOfAdults;
     private int numOfChildren;
     private int totalNumOfGuest;
-    private String bookingConfiremationCode;
+    private String bookingConfirmationCode;
     private UserDTO user;
     private RoomDTO room;
+
 }
