@@ -9,6 +9,7 @@ import com.ceylontours.CeylonToursHotel.exception.OurException;
 import com.ceylontours.CeylonToursHotel.repo.BookingRepository;
 import com.ceylontours.CeylonToursHotel.repo.RoomRepository;
 import com.ceylontours.CeylonToursHotel.repo.UserRepository;
+import com.ceylontours.CeylonToursHotel.service.interfac.IBookingService;
 import com.ceylontours.CeylonToursHotel.service.interfac.IRoomService;
 import com.ceylontours.CeylonToursHotel.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BookingService {
+public class BookingService implements IBookingService {
     @Autowired
     private BookingRepository bookingRepository;
     @Autowired
@@ -29,7 +30,7 @@ public class BookingService {
     private UserRepository userRepository;
 
 
-
+    @Override
     public Response saveBooking(Long roomId, Long userId, Booking bookingRequest) {
 
         Response response = new Response();
@@ -69,7 +70,7 @@ public class BookingService {
     }
 
 
-
+    @Override
     public Response findBookingByConfirmationCode(String confirmationCode) {
 
         Response response = new Response();
@@ -93,7 +94,7 @@ public class BookingService {
         return response;
     }
 
-
+    @Override
     public Response getAllBookings() {
 
         Response response = new Response();
@@ -117,7 +118,7 @@ public class BookingService {
         return response;
     }
 
-
+    @Override
     public Response cancelBooking(Long bookingId) {
 
         Response response = new Response();
