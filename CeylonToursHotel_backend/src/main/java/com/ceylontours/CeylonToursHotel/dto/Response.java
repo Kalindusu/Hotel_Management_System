@@ -117,4 +117,6 @@ public class Response {
     public void setBookingList(List<BookingDTO> bookingList) {
         this.bookingList = bookingList;
     }
+
+
 }
