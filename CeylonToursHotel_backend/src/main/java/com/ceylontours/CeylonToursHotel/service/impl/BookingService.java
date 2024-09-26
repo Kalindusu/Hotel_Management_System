@@ -55,7 +55,7 @@ public class BookingService implements IBookingService {
             bookingRepository.save(bookingRequest);
             response.setStatusCode(200);
             response.setMessage("successful");
-            response.setBookingConfiremationCode(bookingConfirmationCode);
+            response.setBookingConfirmationCode(bookingConfirmationCode);
 
         } catch (OurException e) {
             response.setStatusCode(404);
