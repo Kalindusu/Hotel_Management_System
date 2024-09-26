@@ -1,5 +1,6 @@
 package com.ceylontours.CeylonToursHotel.controller;
 
+import com.ceylontours.CeylonToursHotel.dto.LoginRequest;
 import com.ceylontours.CeylonToursHotel.dto.Response;
 import com.ceylontours.CeylonToursHotel.entity.User;
 import com.ceylontours.CeylonToursHotel.service.interfac.IUserService;
@@ -19,6 +20,12 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<Response> register (@RequestBody User user){
         Response response=userService.register(user);
+        return ResponseEntity.status(response.getStatusCode()).body(response);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Response> login (@RequestBody LoginRequest loginRequest){
+        Response response=userService.login(loginRequest);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
