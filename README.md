@@ -1,18 +1,7 @@
-# CeylonTours Hotel Booking Website
+# CeylonTours Hotel Booking Management  Website with an Admin panel
 
 CeylonTours is a full-featured hotel booking platform designed to streamline the booking process for users and hotel management alike. Built with modern technologies, this application offers a smooth, secure, and intuitive experience for both customers and administrators. The platform is scalable, efficient, and ready for cloud deployment.
 
-## Table of Contents
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Screenshots](#screenshots)
-- [Setup Instructions](#setup-instructions)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
-
----
 
 ## Key Features
 
