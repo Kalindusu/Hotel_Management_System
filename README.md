@@ -76,5 +76,5 @@ The CeylonTours platform follows a modular architecture, separating concerns bet
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/CeylonToursHotel.git
+   git clone https://github.com/Kalindusu/Hotel_Management_System.git
    cd CeylonToursHotel
