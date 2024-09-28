@@ -57,10 +57,6 @@ CeylonTours is a full-featured hotel booking platform designed to streamline the
 ## Architecture
 The CeylonTours platform follows a modular architecture, separating concerns between the frontend and backend. The frontend, built with ReactJS, interacts with the backend API, which is built using Spring Boot. Authentication and security are managed with Spring Security and JWT. Images are stored in AWS S3, while the entire application is deployed on AWS EC2.
 
----
-
-## Screenshots
-(Add your application screenshots here to provide users with a visual overview of the project.)
 
 ---
 
