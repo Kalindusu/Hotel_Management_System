@@ -165,6 +165,11 @@ button[type="submit"]:hover {
   bottom: 0;
   width: 100%;
   font-weight: 500;
+  display:flex;
+ padding-left: 'auto';
+  padding-right: 'auto';
+  justify-content: center;
+  align-items: center;
 }
 
 
